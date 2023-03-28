@@ -16,9 +16,9 @@ Both screenshots captured on maximum brightness of display with __Apple XDR (P3-
 Possible supported devices: Apple MacBook Pro with 14 or 16 inches and Apple Pro Display XDR.
 
 ## TODO
-- Calibrate output colors: The current implementation uses a white ultra-bright color with an alpha of 0.5 overlaying the display pixels, which can lead to color inaccuracy and brightness losses. This needs to be addressed.
-- Fullscreen & System-wide: The app currently works on a selected part of the display only. It needs to be extended to support fullscreen and system-wide overlay.
-- Performance: The app needs to be optimized for better performance and to reduce resource usage.
+- __Calibrate output colors__ - The current implementation uses a white ultra-bright color with an alpha of 0.5 overlaying the display pixels, which can lead to color inaccuracy and brightness losses.
+- __Fullscreen & System-wide__ - The app currently works on a selected part of the display only. It needs to be extended to support fullscreen and system-wide overlay.
+- __Performance__ - The app needs to be optimized for better performance and to reduce resource usage.
 
 ## Literature
 
