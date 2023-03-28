@@ -1,5 +1,5 @@
 # Bright XDR 
-__BrightXDR__ is a macOS SwiftUI proof-of-concept implementation that demonstrates how to upscale display content to XDR/HDR extra brightness on a selected part of the display. This is a demo showing one of possible implementations.
+__BrightXDR__ is a macOS proof-of-concept implementation that demonstrates how to upscale display content to XDR/HDR extra brightness on a selected part of the display. This is a demo showing one of possible implementations.
 
 > The main idea behind this project is to provide an open source and free-to-use alternative to existing apps that offer similar functionality for a price of up to &euro;20. I believe that everyone should have access to powerful tools that enhance their display experience, regardless of their budget.
 
@@ -17,7 +17,7 @@ Possible supported devices: Apple MacBook Pro with 14 or 16 inches and Apple Pro
 
 ## TODO
 - Calibrate output colors: The current implementation uses a white ultra-bright color with an alpha of 0.5 overlaying the display pixels, which can lead to color inaccuracy and brightness losses. This needs to be addressed.
-- Fullscreen & System-wide (overlay): The app currently works on a selected part of the display only. It needs to be extended to support fullscreen and system-wide overlay.
+- Fullscreen & System-wide: The app currently works on a selected part of the display only. It needs to be extended to support fullscreen and system-wide overlay.
 - Performance: The app needs to be optimized for better performance and to reduce resource usage.
 
 ## Literature
