@@ -1,5 +1,5 @@
 //
-//  BrightXDRApp.swift
+//  App.swift
 //  BrightXDR
 //
 //  Created by Dmitry Starkov on 28/03/2023.
