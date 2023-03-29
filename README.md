@@ -1,5 +1,5 @@
 # Bright XDR 
-__BrightXDR__ is a macOS proof-of-concept implementation that demonstrates how to upscale display content to XDR/HDR extra brightness on a selected part of the display. This is a demo showing one of possible implementations.
+__BrightXDR__ is a macOS proof-of-concept implementation that demonstrates how to upscale display content to XDR/HDR extra brightness. This is a demo showing one of possible implementations.
 
 > The main idea behind this project is to provide an open source and free-to-use alternative to existing apps that offer similar functionality for a price of up to &euro;20. I believe that everyone should have access to powerful tools that enhance their display experience, regardless of their budget.
 
