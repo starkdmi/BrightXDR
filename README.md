@@ -7,10 +7,8 @@ __BrightXDR__ is a macOS proof-of-concept implementation that demonstrates how t
 The app uses MetalKit to overlay the CIImage with a transparent color in EDR color space over the display windows while applying color blending filter.
 
 ## Preview 
-Both screenshots captured on maximum brightness of display with __Apple XDR (P3-1600 nits)__ preset.
-| Screenshot 1 | Screenshot 2 |
-| ------------ | ------------ |
-|<img src="https://user-images.githubusercontent.com/21260939/228224887-3da133cf-8495-4c90-ac3d-536ba51a4f53.jpg" alt="Screenshot" width="400">|<img src="https://user-images.githubusercontent.com/21260939/228225471-c4d97fcf-30e1-470d-9f18-f10768cb2a58.jpg" alt="Screenshot2" width="400">|
+> Screen captured on maximum system brightness with __Apple XDR (P3-1600 nits)__ display preset.
+<img src="https://user-images.githubusercontent.com/21260939/228393300-34f48989-ba81-45a0-9364-3b66252f6a36.jpg" alt="Screenshot" width="400">
 
 ## Requirements
 Supported devices: Apple MacBook Pro with 14 or 16 inches and Apple Pro Display XDR.
