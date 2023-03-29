@@ -11,7 +11,7 @@ import SwiftUI
 struct BrightXDRApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MetalView(contrast: 2.5, brightness: 2.5)
         }
     }
 }

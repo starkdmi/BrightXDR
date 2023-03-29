@@ -4,7 +4,7 @@ __BrightXDR__ is a macOS proof-of-concept implementation that demonstrates how t
 > The main idea behind this project is to provide an open source and free-to-use alternative to existing apps that offer similar functionality for a price of up to &euro;20. I believe that everyone should have access to powerful tools that enhance their display experience, regardless of their budget.
 
 ## About 
-The app uses MetalKit to overlay the CIImage with a solid color in EDR color space based on the maximum headroom available right over the screen windows.
+The app uses MetalKit to overlay the CIImage with a transparent color in EDR color space over the display windows while applying color blending filter.
 
 ## Preview 
 Both screenshots captured on maximum brightness of display with __Apple XDR (P3-1600 nits)__ preset.
@@ -13,11 +13,11 @@ Both screenshots captured on maximum brightness of display with __Apple XDR (P3-
 |<img src="https://user-images.githubusercontent.com/21260939/228224887-3da133cf-8495-4c90-ac3d-536ba51a4f53.jpg" alt="Screenshot" width="400">|<img src="https://user-images.githubusercontent.com/21260939/228225471-c4d97fcf-30e1-470d-9f18-f10768cb2a58.jpg" alt="Screenshot2" width="400">|
 
 ## Requirements
-Possible supported devices: Apple MacBook Pro with 14 or 16 inches and Apple Pro Display XDR.
+Supported devices: Apple MacBook Pro with 14 or 16 inches and Apple Pro Display XDR.
 
 ## TODO
-- __Calibrate output colors__ - The current implementation uses a white ultra-bright color with an alpha of 0.5 overlaying the display pixels, which can lead to color inaccuracy and brightness losses.
 - __Fullscreen & System-wide__ - The app currently works on a selected part of the display only. It needs to be extended to support fullscreen and system-wide overlay.
+- __Forward touches__ - Pass all touches/events through a window.
 - __Performance__ - The app needs to be optimized for better performance and to reduce resource usage.
 
 ## Literature

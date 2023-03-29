@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1DCF1F4F29D2FABA005D14C3 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DCF1F4E29D2FABA005D14C3 /* App.swift */; };
-		1DCF1F5129D2FABA005D14C3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DCF1F5029D2FABA005D14C3 /* ContentView.swift */; };
 		1DCF1F5329D2FABB005D14C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1DCF1F5229D2FABB005D14C3 /* Assets.xcassets */; };
 		1DCF1F5E29D2FBB5005D14C3 /* TransparentWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DCF1F5D29D2FBB5005D14C3 /* TransparentWindow.swift */; };
 		1DCF1F6029D2FBD9005D14C3 /* MetalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DCF1F5F29D2FBD9005D14C3 /* MetalView.swift */; };
@@ -17,7 +16,6 @@
 /* Begin PBXFileReference section */
 		1DCF1F4B29D2FABA005D14C3 /* BrightXDR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BrightXDR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DCF1F4E29D2FABA005D14C3 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
-		1DCF1F5029D2FABA005D14C3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		1DCF1F5229D2FABB005D14C3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1DCF1F5729D2FABB005D14C3 /* BrightXDR.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BrightXDR.entitlements; sourceTree = "<group>"; };
 		1DCF1F5D29D2FBB5005D14C3 /* TransparentWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransparentWindow.swift; sourceTree = "<group>"; };
@@ -55,7 +53,6 @@
 			isa = PBXGroup;
 			children = (
 				1DCF1F4E29D2FABA005D14C3 /* App.swift */,
-				1DCF1F5029D2FABA005D14C3 /* ContentView.swift */,
 				1DCF1F5F29D2FBD9005D14C3 /* MetalView.swift */,
 				1DCF1F5D29D2FBB5005D14C3 /* TransparentWindow.swift */,
 				1DCF1F5229D2FABB005D14C3 /* Assets.xcassets */,
@@ -135,7 +132,6 @@
 			files = (
 				1DCF1F6029D2FBD9005D14C3 /* MetalView.swift in Sources */,
 				1DCF1F5E29D2FBB5005D14C3 /* TransparentWindow.swift in Sources */,
-				1DCF1F5129D2FABA005D14C3 /* ContentView.swift in Sources */,
 				1DCF1F4F29D2FABA005D14C3 /* App.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
