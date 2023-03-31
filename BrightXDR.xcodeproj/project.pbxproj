@@ -7,18 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1DCF1F4F29D2FABA005D14C3 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DCF1F4E29D2FABA005D14C3 /* App.swift */; };
+		1D2D10E429D7777200D7A887 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2D10E329D7777200D7A887 /* main.swift */; };
+		1D2D10E629D7778100D7A887 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2D10E529D7778100D7A887 /* AppDelegate.swift */; };
 		1DCF1F5329D2FABB005D14C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1DCF1F5229D2FABB005D14C3 /* Assets.xcassets */; };
-		1DCF1F5E29D2FBB5005D14C3 /* TransparentWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DCF1F5D29D2FBB5005D14C3 /* TransparentWindow.swift */; };
 		1DCF1F6029D2FBD9005D14C3 /* MetalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DCF1F5F29D2FBD9005D14C3 /* MetalView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1D2D10E329D7777200D7A887 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		1D2D10E529D7778100D7A887 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1D2D10E729D777EA00D7A887 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		1DCF1F4B29D2FABA005D14C3 /* BrightXDR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BrightXDR.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		1DCF1F4E29D2FABA005D14C3 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		1DCF1F5229D2FABB005D14C3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1DCF1F5729D2FABB005D14C3 /* BrightXDR.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BrightXDR.entitlements; sourceTree = "<group>"; };
-		1DCF1F5D29D2FBB5005D14C3 /* TransparentWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransparentWindow.swift; sourceTree = "<group>"; };
 		1DCF1F5F29D2FBD9005D14C3 /* MetalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -52,9 +53,10 @@
 		1DCF1F4D29D2FABA005D14C3 /* BrightXDR */ = {
 			isa = PBXGroup;
 			children = (
-				1DCF1F4E29D2FABA005D14C3 /* App.swift */,
+				1D2D10E729D777EA00D7A887 /* Info.plist */,
+				1D2D10E329D7777200D7A887 /* main.swift */,
+				1D2D10E529D7778100D7A887 /* AppDelegate.swift */,
 				1DCF1F5F29D2FBD9005D14C3 /* MetalView.swift */,
-				1DCF1F5D29D2FBB5005D14C3 /* TransparentWindow.swift */,
 				1DCF1F5229D2FABB005D14C3 /* Assets.xcassets */,
 				1DCF1F5729D2FABB005D14C3 /* BrightXDR.entitlements */,
 			);
@@ -131,8 +133,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				1DCF1F6029D2FBD9005D14C3 /* MetalView.swift in Sources */,
-				1DCF1F5E29D2FBB5005D14C3 /* TransparentWindow.swift in Sources */,
-				1DCF1F4F29D2FABA005D14C3 /* App.swift in Sources */,
+				1D2D10E429D7777200D7A887 /* main.swift in Sources */,
+				1D2D10E629D7778100D7A887 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,8 +268,10 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BrightXDR/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Bright XDR";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -296,8 +300,10 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BrightXDR/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Bright XDR";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
