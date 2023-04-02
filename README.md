@@ -9,7 +9,7 @@ The app uses MetalKit to overlay the CIImage with a transparent color in EDR col
 ## Preview 
 > Screen captured on maximum system brightness with __Apple XDR (P3-1600 nits)__ display preset.
 
-| [Window](/starkdmi/BrightXDR/tree/swiftui-window) | Split View |
+| [Window](../../tree/swiftui-window) | Split View |
 | ------------ | ------------ |
 |<img src="https://user-images.githubusercontent.com/21260939/228393300-34f48989-ba81-45a0-9364-3b66252f6a36.jpg" alt="Screenshot" width="400">|<img src="https://user-images.githubusercontent.com/21260939/229236909-6b904565-9dc3-48b5-ab00-96c7667c9301.jpg" alt="Screenshot2" width="590">|
 
