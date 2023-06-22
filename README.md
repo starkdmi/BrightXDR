@@ -20,6 +20,7 @@ Supported devices: Apple MacBook Pro with 14 or 16 inches and Apple Pro Display 
 - __Mission Control & Spaces__
   - HDR brightness disabled during switching between Spaces.
   - White screen can appear on desktop or Spaces previews (thumbnails).
+  - White screen can appear while video playback.
 
 ## Literature
 
