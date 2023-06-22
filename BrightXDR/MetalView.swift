@@ -43,11 +43,7 @@ class MetalView: MTKView, MTKViewDelegate {
         // Allow the view to display its contents outside of the framebuffer and bind the delegate to the coordinator
         self.framebufferOnly = false
         // Update FPS (matter only on space switching or on/off HDR brightness mode)
-        if #available(macOS 12.0, *) {
-            self.preferredFramesPerSecond = NSScreen.main?.maximumFramesPerSecond ?? 120
-        } else {
-            self.preferredFramesPerSecond = 120
-        }
+        self.preferredFramesPerSecond = 3
         // Enable EDR
         self.colorPixelFormat = .rgba16Float
         self.colorspace = colorSpace
