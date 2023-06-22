@@ -10,23 +10,27 @@ import MetalKit
 
 // Metal view displaying static HDR content to enable EDR display mode
 class MetalView: MTKView, MTKViewDelegate {
-    let colorSpace = CGColorSpace(name: CGColorSpace.extendedLinearDisplayP3)
-    var contrast: Float // values from 1.0 to 3.0, with 2.5 is optimal
-    var brightness: Float // values from 1.0 to 3.0, with 2.5 is optimal
-    
-    var commandQueue: MTLCommandQueue?
-    var renderContext: CIContext?
-    
-    var image: CIImage?
-        
-    init(frame: CGRect, contrast: Float = 2.5, brightness: Float = 2.5) {
+    private let colorSpace = CGColorSpace(name: CGColorSpace.extendedLinearDisplayP3)
+    private var contrast: Float // values from 1.0 to 3.0, where 2.5 is optimal
+    private var brightness: Float // values from 1.0 to 3.0, where 2.5 is optimal
+
+    private var commandQueue: MTLCommandQueue?
+    private var renderContext: CIContext?
+
+    private var image: CIImage?
+
+    /// Public initializer
+    /// - frameRate: lower the frame rate for better perfomance, otherwise the screen frame rate is used (probably 120)
+    /// - contrast: value use by `CIColorControls` `CIFilter`
+    /// - brightness: value use by `CIColorControls` `CIFilter`
+    init(frame: CGRect, frameRate: Int? = nil, contrast: Float = 2.5, brightness: Float = 2.5) {
         self.contrast = contrast
         self.brightness = brightness
         super.init(frame: frame, device: MTLCreateSystemDefaultDevice())
-        
+
         if let device = self.device {
             self.commandQueue = device.makeCommandQueue()
-            
+
             // Create a CIContext for rendering a CIImage to a destination using Metal
             if let commandQueue = self.commandQueue {
                 self.renderContext = CIContext(mtlCommandQueue: commandQueue, options: [
@@ -39,14 +43,18 @@ class MetalView: MTKView, MTKViewDelegate {
             }
         }
         self.delegate = self
-                
+
         // Allow the view to display its contents outside of the framebuffer and bind the delegate to the coordinator
         self.framebufferOnly = false
         // Update FPS (matter only on space switching or on/off HDR brightness mode)
-        if #available(macOS 12.0, *) {
-            self.preferredFramesPerSecond = NSScreen.main?.maximumFramesPerSecond ?? 120
+        if let frameRate = frameRate {
+            self.preferredFramesPerSecond = frameRate
         } else {
-            self.preferredFramesPerSecond = 120
+            if #available(macOS 12.0, *) {
+                self.preferredFramesPerSecond = NSScreen.main?.maximumFramesPerSecond ?? 120
+            } else {
+                self.preferredFramesPerSecond = 120
+            }
         }
         // Enable EDR
         self.colorPixelFormat = .rgba16Float
@@ -68,10 +76,10 @@ class MetalView: MTKView, MTKViewDelegate {
               let cgColor = CGColor(colorSpace: colorSpace, components: [1.0, 1.0, 1.0, 1.0]) else {
             return
         }
-        
+
         // Text overlay
         var preview: CIImage?
-        
+
         // Preview data
         let textLayer = CATextLayer()
         textLayer.string = "Bright XDR"
@@ -79,12 +87,12 @@ class MetalView: MTKView, MTKViewDelegate {
         textLayer.fontSize = 136
         textLayer.foregroundColor = cgColor
         //textLayer.contentsScale = screenScale
-        
+
         // Calculate text size and position
         let textLayerSize = textLayer.preferredFrameSize()
         textLayer.frame = CGRect(x: 0, y: 0, width: textLayerSize.width, height: textLayerSize.height)
         textLayer.position = CGPoint(x: bounds.width / 2, y: bounds.height / 2)
-        
+
         // Render text layer on NSImage
         let textImage = NSImage(size: bounds.size)
         textImage.lockFocus()
@@ -104,7 +112,7 @@ class MetalView: MTKView, MTKViewDelegate {
                 }
             }
         }
-        
+
         // Solid transparent
         var transparent: CIImage?
         // Apply color filter
@@ -113,7 +121,7 @@ class MetalView: MTKView, MTKViewDelegate {
             // Save main image
             transparent = image
         }
-        
+
         // Set global image
         if (preview != nil) {
             self.image = preview
@@ -125,7 +133,7 @@ class MetalView: MTKView, MTKViewDelegate {
             self.image = transparent
         }
     }
-        
+
     required init(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -133,22 +141,22 @@ class MetalView: MTKView, MTKViewDelegate {
     func draw(in view: MTKView) {
         // Verify transparent image was rendered
         guard let image = image, let colorSpace = colorSpace else { return  }
-        
+
         // Check Metal device was initialized correctly
         guard let commandQueue = commandQueue, let renderContext = renderContext else { return }
-        
+
         // Create a new command buffer and get the drawable object to render into
         guard let commandBuffer = commandQueue.makeCommandBuffer(), let drawable = currentDrawable else { return }
-        
+
         // Render the CIImage
         renderContext.render(image, to: drawable.texture, commandBuffer: commandBuffer, bounds: CGRect(origin: CGPoint.zero, size: drawableSize), colorSpace: colorSpace)
-                
+
         // Present the drawable to the screen
         commandBuffer.present(drawable)
-        
+
         // Commit the command buffer for execution on the GPU
         commandBuffer.commit()
     }
-    
+
     func mtkView(_ view: MTKView, drawableSizeWillChange size: CGSize) { }
 }
