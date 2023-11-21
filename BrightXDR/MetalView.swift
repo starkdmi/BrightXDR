@@ -11,8 +11,8 @@ import MetalKit
 // Metal view displaying static HDR content to enable EDR display mode
 class MetalView: MTKView, MTKViewDelegate {
     private let colorSpace = CGColorSpace(name: CGColorSpace.extendedLinearDisplayP3)
-    private var contrast: Float // values from 1.0 to 3.0, where 2.5 is optimal
-    private var brightness: Float // values from 1.0 to 3.0, where 2.5 is optimal
+    private var contrast: Float // values from 1.0 to 3.0, where 1.0 is optimal
+    private var brightness: Float // values from 0.0 to 3.0, where 1.0 is optimal
 
     private var commandQueue: MTLCommandQueue?
     private var renderContext: CIContext?
@@ -23,7 +23,7 @@ class MetalView: MTKView, MTKViewDelegate {
     /// - frameRate: lower the frame rate for better perfomance, otherwise the screen frame rate is used (probably 120)
     /// - contrast: value use by `CIColorControls` `CIFilter`
     /// - brightness: value use by `CIColorControls` `CIFilter`
-    init(frame: CGRect, frameRate: Int? = nil, contrast: Float = 2.5, brightness: Float = 2.5) {
+    init(frame: CGRect, frameRate: Int? = nil, contrast: Float = 1.0, brightness: Float = 1.0) {
         self.contrast = contrast
         self.brightness = brightness
         super.init(frame: frame, device: MTLCreateSystemDefaultDevice())

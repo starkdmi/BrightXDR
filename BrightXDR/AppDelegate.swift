@@ -23,7 +23,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // Create a new transparent, borderless window
         window = NSWindow(contentRect: fullScreenRect, styleMask: [.borderless], backing: .buffered, defer: false)
         window.isOpaque = false
-        window.backgroundColor = NSColor.clear
+        window.backgroundColor = .clear
         // Ignore all mouse events
         window.ignoresMouseEvents = true
 
@@ -33,14 +33,15 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         window.level = NSWindow.Level.mainMenu
 
         // Allow window to overlay in Mission Control and Spaces
-        window.collectionBehavior = [.stationary, .canJoinAllSpaces, .fullScreenAuxiliary, .ignoresCycle, .managed]
+        window.collectionBehavior = [.stationary, .canJoinAllSpaces, .fullScreenAuxiliary, .ignoresCycle] // .managed
 
         // Keep visible all time (required for overlays)
         window.hidesOnDeactivate = false
 
         // Add metal view with HDR overlay
         guard let view = window.contentView else { return }
-        metalView = MetalView(frame: view.bounds, frameRate: 3)
+        // The contrast and brightness can be adjust for a brighter effect, at the expense of color correctness
+        metalView = MetalView(frame: view.bounds, frameRate: 3, contrast: 1.0, brightness: 1.0)
         metalView.autoresizingMask = [.width, .height]
         view.addSubview(metalView)
 
